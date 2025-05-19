@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body bgcolor="#ccFF99">
+       <h1>All blogs </h1>
+
+       <form>
+        <input type="text" name="srch" value="{{srch}}">
+        <button type="submit" >search</button>
+       </form>
+      
+       <table border="1" bgcolor="#fff">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Created by</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for blog in blogs%}
+            <tr>
+                <td>{{blog.id}}</td>
+                <td>{{blog.title}}</td>
+                <td>{{blog.description}}</td>
+                {%if blog.image%}
+                <td><img src="{{blog.image.url}}" width="200" height: auto></td>
+                {%else%}
+                <td> No Image Found</td>
+                {%endif%}
+                {%if blog.user.first_name == request.user.first_name%}
+                <td>you</td>
+                {%else%}
+                <td>{{blog.user.first_name}}</td>
+
+                {%endif%}
+            </tr>
+            {%endfor%}
+        </tbody>
+        </table>
+        <br><a href="/home">Go back</a>
+    </body>
+</html>
+
+
+ 
+
+

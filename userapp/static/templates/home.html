@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body bgcolor="#9EFA83">
+      
+       {% if user.is_authenticated %}
+       <h1>Welcome {{user}}</h1>
+       {% endif %}
+       <h2><a href="add-blog">Add Blog</a></h2>
+       <h2><a href="all-blogs">All Blog</a></h2>
+       <h2><a href="my-blogs">My Blog</a></h2>
+       <h2><a href="logout">Logout</a></h2>
+        </body>
+       </html>
+    </body>
+</html>

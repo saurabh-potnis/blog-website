@@ -1,0 +1,6 @@
+{
+  "*.html": "django-html"
+}
+ 
+  "django-html": "html"
+}
